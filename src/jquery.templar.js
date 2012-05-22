@@ -4,27 +4,28 @@
   // data focused methods //
   //////////////////////////
 
-  $.Templar = function(template, tokens) {
+  $.Templar = function(template) {
     if(typeof template === 'undefined') {
       throw new Error('Template is not defined. The Templar will find you.')
     }
 
     this.template = template
-    this.tokens   = tokens || {}
   }
 
-  $.Templar.prototype.evaluate = function() {
+  $.Templar.prototype.evaluate = function(tokens) {
     var result = this.template
 
-    for(var tokenName in this.tokens) {
-      var regExp = new RegExp("%{" + tokenName + "}", "g")
-        , value  = this.tokens[tokenName]
+    tokens = tokens || {}
 
-      if(typeof value === 'function') {
-        value = value()
+    for(var tokenName in tokens) {
+      var regExp          = new RegExp("%{" + tokenName + "}", "g")
+        , valueOrFunction = tokens[tokenName]
+
+      if(typeof valueOrFunction === 'function') {
+        valueOrFunction = valueOrFunction()
       }
 
-      result = result.replace(regExp, this.tokens[tokenName])
+      result = result.replace(regExp, valueOrFunction)
     }
 
     return result
