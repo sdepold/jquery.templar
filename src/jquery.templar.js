@@ -35,8 +35,11 @@
   // view focused methods //
   //////////////////////////
 
-  $.fn.templar = function() {
-    $(this).text('templar')
+  $.fn.templar = function(tokens) {
+    var $element = $(this)
+      , templar  = new $.Templar($element.text())
+
+    $(this).text(templar.evaluate(tokens))
   }
 
 })(jQuery)
