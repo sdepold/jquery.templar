@@ -1,0 +1,23 @@
+{
+  "author": "Sascha Depold <sascha@depold.com> (http://depold.com)",
+  "name": "jquery.templar",
+  "description": "A super simple and dynamic templating engine.",
+  "version": "0.0.0",
+  "homepage": "https://github.com/sdepold/jquery.templar",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/sdepold/jquery.templar.git"
+  },
+  "dependencies": {
+    "jquery.skeleton": "~0.2.1",
+    "buster": "~0.5.0"
+  },
+  "devDependencies": {},
+  "optionalDependencies": {},
+  "engines": {
+    "node": "*"
+  },
+  "scripts": {
+    "test": "java -jar dist/compiler.jar src/*.js --js_output_file=dist/jquery.`pwd|sed -e 's/.*jquery\\.//'`.min.js && node_modules/.bin/buster-test"
+  }
+}
