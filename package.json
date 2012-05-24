@@ -9,7 +9,7 @@
     "url": "git://github.com/sdepold/jquery.templar.git"
   },
   "dependencies": {
-    "jquery.skeleton": "~0.2.1",
+    "jquery.skeleton": "~0.3.0",
     "buster": "~0.5.0"
   },
   "devDependencies": {},
