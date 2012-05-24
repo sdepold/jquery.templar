@@ -39,3 +39,7 @@ Will result in:
   <p>foo bar baz</p>
 </div>
 ```
+
+## License
+
+Hereby place under MIT license.
