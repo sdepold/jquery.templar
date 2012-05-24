@@ -50,5 +50,27 @@ describe('jquery.templar', function() {
       this.element.templar({ foo: 'baz' })
       expect(this.element.text()).toEqual('baz bar')
     })
+
+    it("replaces the tokens but keeps the html structure", function() {
+      jQuery('<div>').text('foo %{foo} baz').appendTo(this.element)
+
+      this.element.templar({ foo: 'bar' })
+
+      expect(this.element.html()).toEqual('bar bar<div>foo bar baz</div>')
+    })
   })
 })
+
+
+
+
+
+
+
+
+
+
+
+
+
+

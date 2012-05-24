@@ -37,9 +37,9 @@
 
   $.fn.templar = function(tokens) {
     var $element = $(this)
-      , templar  = new $.Templar($element.text())
+      , templar  = new $.Templar($element.html())
 
-    $(this).text(templar.evaluate(tokens))
+    $(this).html(templar.evaluate(tokens))
   }
 
 })(jQuery)
