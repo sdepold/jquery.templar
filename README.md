@@ -9,7 +9,7 @@ If you have a template inside a string variable, you might be interested in usin
 the direct method call to evaluate your template. This is how to do it:
 
 ```js
-new $.Template('my %{funky} template').evaluate({
+new $.Templar('my %{funky} template').evaluate({
   funky: 'awesome'
 })
 
